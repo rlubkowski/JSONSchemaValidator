@@ -1,0 +1,31 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.12.35527.113
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SchemaValidatorApp", "SchemaValidatorApp\SchemaValidatorApp.csproj", "{53CABD81-DD14-4181-9E61-D9141A0C37B2}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SchemaValidator", "SchemaValidator\SchemaValidator.csproj", "{B0877156-5FD2-4D84-A964-BFE9D1D1F581}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{53CABD81-DD14-4181-9E61-D9141A0C37B2}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{53CABD81-DD14-4181-9E61-D9141A0C37B2}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{53CABD81-DD14-4181-9E61-D9141A0C37B2}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{53CABD81-DD14-4181-9E61-D9141A0C37B2}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B0877156-5FD2-4D84-A964-BFE9D1D1F581}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B0877156-5FD2-4D84-A964-BFE9D1D1F581}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B0877156-5FD2-4D84-A964-BFE9D1D1F581}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B0877156-5FD2-4D84-A964-BFE9D1D1F581}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {2F40EB00-AF44-4740-A81D-D8DFBE5FF716}
+	EndGlobalSection
+EndGlobal
