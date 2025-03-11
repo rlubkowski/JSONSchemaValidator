@@ -1,11 +1,10 @@
 ﻿using ErrorOr;
-using SchemaValidator.Model.Schema;
 using SchemaValidator.Validation.Rule;
 using System.Collections.Immutable;
 
-namespace SchemaValidator
+namespace SchemaValidator.Validation
 {
-    internal sealed class ValidationService
+    internal class ValidationService
     {
         private readonly IEnumerable<IValidationRule> validationRules;
 
@@ -18,7 +17,7 @@ namespace SchemaValidator
             };
         }
 
-        internal ErrorOr<Success> Validate(ImmutableDictionary<string, object?> input, ImmutableDictionary<string, Rule> schema)
+        internal ErrorOr<Success> Validate(ImmutableDictionary<string, object?> input, ImmutableDictionary<string, Model.Schema.Rule> schema)
         {
             var errors = new List<Error>();
 

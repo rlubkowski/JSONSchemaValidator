@@ -10,14 +10,14 @@ namespace SchemaValidator.Validation.Rule
             {
                 if (fieldValue == null)
                 {
-                    return ErrorOr.Error.Validation(
+                    return Error.Validation(
                         "Field.MandatoryError",
                         $"Field '{fieldName}' is mandatory but missing."
                     );
                 }
                 if (fieldValue is string stringValue && string.IsNullOrEmpty(stringValue))
                 {
-                    return ErrorOr.Error.Validation(
+                    return Error.Validation(
                         "Field.MandatoryError",
                         $"Field '{fieldName}' is mandatory but empty."
                     );

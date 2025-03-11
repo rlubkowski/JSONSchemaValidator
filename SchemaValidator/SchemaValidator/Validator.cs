@@ -2,15 +2,17 @@
 using Newtonsoft.Json.Linq;
 using SchemaValidator.Mapping;
 using SchemaValidator.Model.Output;
+using SchemaValidator.Validation;
 
 namespace SchemaValidator
 {
-    public sealed class Validator
+    public class Validator
     {
         private readonly ErrorToValidationErrorMapper _errorToValidationErrorMapper;
         private readonly JObjectToDictionaryMapper _jObjectToDictionaryMapper;
         private readonly SchemaReader _schemaReader;
         private readonly ValidationService _validationService;
+
         public Validator()
         {
             _errorToValidationErrorMapper = new ErrorToValidationErrorMapper();
@@ -49,7 +51,7 @@ namespace SchemaValidator
                 var schema = schemaResult.Value;
                 
                 var validationResults = new List<OutputResult>();
-
+                bool resultValid = true;
                 using (Stream stream = File.OpenRead(inputJsonPath))
                 using (StreamReader streamReader = new StreamReader(stream))
                 using (JsonTextReader reader = new JsonTextReader(streamReader))
@@ -75,6 +77,8 @@ namespace SchemaValidator
                                         ? [.. _errorToValidationErrorMapper.Map(validationResult.Errors)]
                                         : new List<ValidationError>()
                                 };
+                                if (validationResult.IsError)
+                                    resultValid = false;
                                 validationResults.Add(result);
                             }
                         }
@@ -83,7 +87,7 @@ namespace SchemaValidator
 
                 await WriteOutputAsync(validationResults, outputJsonPath);
 
-                return true;
+                return resultValid;
             }
             catch (Exception)
             {

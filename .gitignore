@@ -3,3 +3,5 @@
 /SchemaValidator/SchemaValidatorApp/bin
 /SchemaValidator/SchemaValidatorApp/obj
 /SchemaValidator/.vs
+/SchemaValidator/SchemaValidatorTests/bin
+/SchemaValidator/SchemaValidatorTests/obj

@@ -5,7 +5,7 @@ using System.Text.Json;
 
 namespace SchemaValidator
 {
-    internal sealed class SchemaReader
+    internal class SchemaReader
     {
         internal async Task<ErrorOr<ImmutableDictionary<string, Rule>>> GetSchema(string schemaPath)
         {
@@ -26,7 +26,7 @@ namespace SchemaValidator
 
                 return schemaDict.ToImmutableDictionary();
             }
-            catch (System.Exception ex)
+            catch (Exception ex)
             {
                 return Error.Failure(
                     code: "Schema.ReadFailed",
